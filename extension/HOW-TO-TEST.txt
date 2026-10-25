@@ -1,0 +1,19 @@
+Plainly for Firefox — temporary install
+
+Firefox will not permanently install this unsigned file. Load it as a temporary add-on:
+
+1. Open Firefox.
+2. Go to about:debugging#/runtime/this-firefox
+3. Click "Load Temporary Add-on…"
+4. Choose this file (Plainly.xpi), or unzip it and choose manifest.json.
+5. Pin Plainly from the extensions menu if you don't see the toolbar button.
+
+The add-on stays installed until you close Firefox.
+
+What to try:
+- Click the toolbar button.
+- Paste text, or use Policy / News / Science.
+- Switch Easy, Plain, and Very easy. The rewrite stays on your device.
+- Open a normal article and click "Simplify this page". Close the panel to return to the original.
+
+It cannot rewrite Firefox's own pages (about:, settings, the add-ons site) or many PDFs. Paste those instead.
