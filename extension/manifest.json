@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Plainly",
-  "version": "0.3.9",
+  "name": "Plainly Brief",
+  "version": "0.3.10",
   "description": "Rewrite dense text into plain language. Free mode runs on this device.",
   "browser_specific_settings": {
     "gecko": {
@@ -14,7 +14,7 @@
   },
   "permissions": ["activeTab", "scripting", "storage"],
   "action": {
-    "default_title": "Plainly",
+    "default_title": "Plainly Brief",
     "default_popup": "popup.html",
     "default_icon": {
       "32": "icons/32.png",

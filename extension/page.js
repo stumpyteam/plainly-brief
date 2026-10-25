@@ -447,11 +447,11 @@
       .map((block) => block.text)
       .join("\n\n");
     if (source.length < 40) {
-      return { ok: false, reason: "No article text found on this page. Paste it into Plainly instead." };
+      return { ok: false, reason: "No article text found on this page." };
     }
     let root = document.getElementById(ROOT_ID);
     const ver = root?.shadowRoot?.querySelector(".ver")?.textContent;
-    if (root && ver !== "0.3.9") {
+    if (root && ver !== "0.3.10") {
       root.remove();
       root = null;
     }
@@ -476,8 +476,8 @@
           <button type="button" id="plainly-close" aria-label="Close">×</button>
           <header>
             <div class="brandline">
-              <strong>Plainly</strong>
-              <span class="ver">0.3.9</span>
+              <strong>Plainly Brief</strong>
+              <span class="ver">0.3.10</span>
               <span id="plainly-grade"></span>
             </div>
             <div class="actions">

@@ -1,8 +1,8 @@
-# Plainly
+# Plainly Brief
 
 A Firefox extension that turns a news article into a shorter, plainer summary on your device. Nothing is uploaded.
 
-Current version: **0.3.9**
+Current version: **0.3.10**
 
 ## Load it in Firefox
 
@@ -10,7 +10,7 @@ The `.xpi` is unsigned, so Firefox will only keep it until you quit.
 
 1. Open `about:debugging#/runtime/this-firefox`
 2. Click **Load Temporary Add-on…**
-3. Choose [Plainly-0.3.9.xpi](https://github.com/stumpyteam/plainly/releases/download/v0.3.9/Plainly-0.3.9.xpi), or choose `extension/manifest.json`
+3. Choose [Plainly-Brief-0.3.10.xpi](https://github.com/stumpyteam/plainly/releases/download/v0.3.10/Plainly-Brief-0.3.10.xpi), or choose `extension/manifest.json`
 4. Open an article and click the Plainly toolbar button
 
 ## What it does
@@ -25,7 +25,7 @@ The `.xpi` is unsigned, so Firefox will only keep it until you quit.
 
 - `extension/` is the add-on (Manifest V3)
 - `src/simplify.ts` is the summarizer. `extension/simplify.js` is the copy the add-on loads
-- `Plainly-0.3.9.xpi` is the packed add-on for temporary install
+- `Plainly-Brief-0.3.10.xpi` is the packed add-on for temporary install
 
 Firefox's own pages (`about:`, settings, addons.mozilla.org) cannot be rewritten. Open a normal article instead.
 
