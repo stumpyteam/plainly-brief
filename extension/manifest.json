@@ -1,12 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Plainly",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "Rewrite dense text into plain language. Free mode runs on this device.",
   "browser_specific_settings": {
     "gecko": {
       "id": "plainly@local.test",
-      "strict_min_version": "115.0"
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
   "permissions": ["activeTab", "scripting", "storage"],
@@ -16,12 +19,14 @@
     "default_icon": {
       "32": "icons/32.png",
       "48": "icons/48.png",
-      "96": "icons/96.png"
+      "96": "icons/96.png",
+      "128": "icons/128.png"
     }
   },
   "icons": {
     "32": "icons/32.png",
     "48": "icons/48.png",
-    "96": "icons/96.png"
+    "96": "icons/96.png",
+    "128": "icons/128.png"
   }
 }

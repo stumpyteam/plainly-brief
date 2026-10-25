@@ -1,0 +1,16 @@
+Plainly turns the article you are reading into a shorter, plainer version.
+
+Open any news story and click the Plainly button. Choose one:
+
+- Plain Summary: a short version of the story
+- More Context: a little more of what happened
+- Bullet Points: the same idea as a list
+
+The summary opens in a panel over the page. Close it and the original article is still there. A word count shows how long the article was and how long the summary is. The text size is remembered the next time you open it.
+
+Plainly runs on your device. The page is not uploaded, and the add-on does not collect personal data. Your theme and text size stay in Firefox's local extension storage.
+
+It works on ordinary articles. It cannot rewrite Firefox's own pages, such as Settings or the Add-ons site.
+
+Privacy
+This add-on does not collect or transmit data. data_collection_permissions is set to "none".
