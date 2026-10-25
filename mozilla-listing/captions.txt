@@ -1,0 +1,8 @@
+01-summary.png
+A plain summary opens over the article. Close it to see the original.
+
+02-bullet-points.png
+Bullet Points turns the same story into a short list.
+
+03-popup.png
+Pick a summary style from the toolbar button.
