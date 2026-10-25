@@ -10,7 +10,7 @@ The `.xpi` is unsigned, so Firefox will only keep it until you quit.
 
 1. Open `about:debugging#/runtime/this-firefox`
 2. Click **Load Temporary Add-on…**
-3. Choose [Plainly-Brief-0.3.11.xpi](https://github.com/stumpyteam/plainly/releases/download/v0.3.11/Plainly-Brief-0.3.11.xpi), or choose `extension/manifest.json`
+3. Choose [Plainly-Brief-0.3.11.xpi](https://github.com/stumpyteam/plainly-brief/releases/download/v0.3.11/Plainly-Brief-0.3.11.xpi), or choose `extension/manifest.json`
 4. Open an article and click the Plainly toolbar button
 
 ## What it does
