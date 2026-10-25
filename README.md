@@ -10,7 +10,10 @@ A Firefox extension that turns a news article into a shorter, plainer summary on
   <a href="https://addons.mozilla.org/en-US/firefox/addon/plainly-brief/"><strong>Get it for Firefox</strong></a>
 </p>
 
-Current version: **0.3.13**
+<p align="center">
+  <a href="https://github.com/stumpyteam/plainly-brief/releases/download/v0.3.13/Plainly-Brief-0.3.13.xpi"><strong>Download Plainly Brief 0.3.13</strong></a>
+</p>
+
 
 ## Release notes
 
