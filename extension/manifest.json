@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Plainly Brief",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "Rewrite dense text into plain language. Free mode runs on this device.",
   "browser_specific_settings": {
     "gecko": {
-      "id": "plainly@local.test",
+      "id": "{522998c8-faf7-4bee-a9f3-adc17360af55}",
       "strict_min_version": "115.0",
       "data_collection_permissions": {
         "required": ["none"]
