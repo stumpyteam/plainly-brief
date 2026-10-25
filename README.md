@@ -2,9 +2,41 @@
 
 A Firefox extension that turns a news article into a shorter, plainer summary on your device. Nothing is uploaded.
 
+<p align="center">
+  <img src="mozilla-listing/icon-256.png" width="96" alt="Plainly Brief">
+</p>
+
+<p align="center">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/plainly-brief/"><strong>Get it for Firefox</strong></a>
+</p>
+
 Current version: **0.3.11**
 
-## Load it in Firefox
+## Screenshots
+
+<p align="center">
+  <img src="mozilla-listing/screenshots/01-summary.png" alt="A plain summary opens over the article. Close it to see the original.">
+  <br>
+  A plain summary opens over the article. Close it to see the original.
+</p>
+
+<p align="center">
+  <img src="mozilla-listing/screenshots/02-bullet-points.png" alt="Bullet Points turns the same story into a short list.">
+  <br>
+  Bullet Points turns the same story into a short list.
+</p>
+
+<p align="center">
+  <img src="mozilla-listing/screenshots/03-popup.png" alt="Pick a summary style from the toolbar button.">
+  <br>
+  Pick a summary style from the toolbar button.
+</p>
+
+## Install
+
+- Firefox: install from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/plainly-brief/)
+
+## Load it manually (temporary)
 
 The `.xpi` is unsigned, so Firefox will only keep it until you quit.
 
