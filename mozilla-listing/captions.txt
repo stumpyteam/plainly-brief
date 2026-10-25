@@ -6,3 +6,6 @@ Bullet Points turns the same story into a short list.
 
 03-popup.png
 Pick a summary style from the toolbar button.
+
+04-dark-summary.png
+The same summary in dark mode.
