@@ -451,7 +451,7 @@
     }
     let root = document.getElementById(ROOT_ID);
     const ver = root?.shadowRoot?.querySelector(".ver")?.textContent;
-    if (root && ver !== "0.3.13") {
+    if (root && ver !== "0.3.14") {
       root.remove();
       root = null;
     }
@@ -477,7 +477,7 @@
           <header>
             <div class="brandline">
               <strong>Plainly Brief</strong>
-              <span class="ver">0.3.13</span>
+              <span class="ver">0.3.14</span>
               <span id="plainly-grade"></span>
             </div>
             <div class="actions">
@@ -563,7 +563,7 @@
       const column = document.createElement("div");
       column.className = "col";
       const note = document.createElement("p");
-      note.textContent = "More Context and Bullet Points are $4.99, once. Open the Plainly Brief button and paste your unlock code. Plain Summary stays free.";
+      note.textContent = "More Context and Bullet Points are $4.99, once. Open the Plainly Brief button and paste your unlock code.";
       column.appendChild(note);
       root.shadowRoot.querySelector("#plainly-body").replaceChildren(column);
       root.shadowRoot.querySelector("#plainly-grade").textContent = "";
