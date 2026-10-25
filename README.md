@@ -32,6 +32,12 @@ Current version: **0.3.11**
   Pick a summary style from the toolbar button.
 </p>
 
+<p align="center">
+  <img src="mozilla-listing/screenshots/04-dark-summary.png" alt="The same summary in dark mode.">
+  <br>
+  The same summary in dark mode.
+</p>
+
 ## Install
 
 - Firefox: install from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/plainly-brief/)
