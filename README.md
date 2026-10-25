@@ -16,7 +16,7 @@ Current version: **0.3.13**
 
 **0.3.13**
 
-Plain Summary stays free and still runs on your device. Nothing in the summary is uploaded.
+Summaries run on your device. Nothing in the summary is uploaded.
 
 More Context and Bullet Points are a one-time $4.99 unlock. Buy unlock opens checkout. After payment, paste the code from your receipt email and press Unlock. The unlock stays on that browser.
 
