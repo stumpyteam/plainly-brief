@@ -1,7 +1,7 @@
 (function () {
   const PRODUCT = "plainly-brief";
   // Paste the Stripe Payment Link here when it exists. Do not reuse another product's link.
-  const CHECKOUT_URL = "";
+  const CHECKOUT_URL = "https://buy.stripe.com/bJe4gy4RGdhN4nL3l0gUM03";
   const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0evIc0gxlVEbYLk3uVmD
 bOZ9M0VmppmtTMbxsHTMYTCyp8aiEWcnvBFgkJXd7s4eXRgRePc1QzLUZnyTBQpu

@@ -451,7 +451,7 @@
     }
     let root = document.getElementById(ROOT_ID);
     const ver = root?.shadowRoot?.querySelector(".ver")?.textContent;
-    if (root && ver !== "0.3.12") {
+    if (root && ver !== "0.3.13") {
       root.remove();
       root = null;
     }
@@ -477,7 +477,7 @@
           <header>
             <div class="brandline">
               <strong>Plainly Brief</strong>
-              <span class="ver">0.3.12</span>
+              <span class="ver">0.3.13</span>
               <span id="plainly-grade"></span>
             </div>
             <div class="actions">
