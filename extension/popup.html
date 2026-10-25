@@ -14,7 +14,7 @@
             <path d="M4 7h16M4 12h11M4 17h7"></path>
           </svg>
         </span>
-        <h1>Plainly Brief <span class="ver" id="unlock">0.3.11</span></h1>
+        <h1>Plainly Brief <span class="ver" id="unlock">0.3.12</span></h1>
       </div>
     </header>
 
@@ -30,8 +30,15 @@
       <button type="button" data-level="context" role="radio">More Context</button>
       <button type="button" data-level="points" role="radio">Bullet Points</button>
     </div>
+    <section id="pay" class="pay" hidden>
+      <p>More Context and Bullet Points are $4.99, once. Plain Summary stays free.</p>
+      <button type="button" id="buy" class="primary">Buy unlock</button>
+      <input id="code" type="text" autocomplete="off" spellcheck="false" placeholder="Paste unlock code" aria-label="Unlock code" />
+      <button type="button" id="redeem">Unlock</button>
+    </section>
     <p id="status" class="status" role="status"></p>
 
+    <script src="license.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>

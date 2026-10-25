@@ -439,7 +439,7 @@
     if (larger) larger.disabled = textSize >= SIZES[SIZES.length - 1];
   }
 
-  function open(level, theme) {
+  function open(level, theme, licensed) {
     const engine = globalThis.PlainlyEngine;
     const article = extract();
     const source = article.blocks
@@ -451,7 +451,7 @@
     }
     let root = document.getElementById(ROOT_ID);
     const ver = root?.shadowRoot?.querySelector(".ver")?.textContent;
-    if (root && ver !== "0.3.11") {
+    if (root && ver !== "0.3.12") {
       root.remove();
       root = null;
     }
@@ -477,7 +477,7 @@
           <header>
             <div class="brandline">
               <strong>Plainly Brief</strong>
-              <span class="ver">0.3.11</span>
+              <span class="ver">0.3.12</span>
               <span id="plainly-grade"></span>
             </div>
             <div class="actions">
@@ -514,7 +514,15 @@
           return;
         }
         const next = target.dataset.level;
-        if (next) show(next);
+        if (next) {
+          if (next === "plain") show(next);
+          else {
+            plainlyHasLicense().then((ok) => {
+              if (ok) show(next);
+              else showLocked();
+            });
+          }
+        }
       });
     } else {
       ensureStyle(root.shadowRoot);
@@ -551,15 +559,35 @@
       root.shadowRoot.querySelector("#plainly-grade").textContent = `${before.words} → ${after.words} words`;
     }
 
+    function showLocked() {
+      const column = document.createElement("div");
+      column.className = "col";
+      const note = document.createElement("p");
+      note.textContent = "More Context and Bullet Points are $4.99, once. Open the Plainly Brief button and paste your unlock code. Plain Summary stays free.";
+      column.appendChild(note);
+      root.shadowRoot.querySelector("#plainly-body").replaceChildren(column);
+      root.shadowRoot.querySelector("#plainly-grade").textContent = "";
+    }
+
     paintTheme(theme);
     applySize(root);
-    show(level || "plain");
+    if (!licensed && level && level !== "plain") showLocked();
+    else show(level || "plain");
     return { ok: true, paragraphs: article.blocks.filter((block) => block.kind === "p").length };
   }
 
   globalThis.PlainlyPage = { open, extract };
 
   const ext = globalThis.browser ?? globalThis.chrome;
+
+  async function plainlyHasLicense() {
+    try {
+      const saved = await ext.storage.local.get("license");
+      return Boolean(await globalThis.PlainlyLicense?.verify(saved?.license?.key));
+    } catch {
+      return false;
+    }
+  }
   if (ext?.runtime?.onMessage) {
     ext.runtime.onMessage.addListener((message, _sender, sendResponse) => {
       if (!message) return;
@@ -569,12 +597,15 @@
         return;
       }
       if (message.type !== "plainly-open") return;
-      ext.storage.local.get("textSize").then((saved) => {
+      ext.storage.local.get(["textSize", "license"]).then(async (saved) => {
         const next = Number(saved?.textSize);
         if (SIZES.includes(next)) textSize = next;
-        sendResponse(open(message.level, message.theme));
+        const license = globalThis.PlainlyLicense;
+        const licensed = license ? await license.verify(saved?.license?.key) : false;
+        const requested = message.level === "context" || message.level === "points" ? message.level : "plain";
+        sendResponse(open(licensed ? requested : "plain", message.theme, licensed));
       }).catch(() => {
-        sendResponse(open(message.level, message.theme));
+        sendResponse(open(message.level === "plain" ? "plain" : "plain", message.theme, false));
       });
       return true;
     });

@@ -49,7 +49,7 @@ async function simplifyPage() {
     try {
       await ext.scripting.executeScript({
         target: { tabId: tab.id },
-        files: ["simplify.js", "page.js"],
+        files: ["simplify.js", "license.js", "page.js"],
       });
     } catch {
       /* Already injected on this page. */
@@ -88,9 +88,49 @@ document.querySelector("#unlock").addEventListener("click", () => {
   setTheme("dracula");
 });
 
+const licenseApi = globalThis.PlainlyLicense;
+const pay = document.querySelector("#pay");
+const codeInput = document.querySelector("#code");
+let licensed = false;
+
+function paid(levelName) {
+  return levelName === "context" || levelName === "points";
+}
+
+function showPay(message) {
+  pay.hidden = false;
+  if (message) status.textContent = message;
+}
+
+document.querySelector("#buy").addEventListener("click", () => {
+  if (!licenseApi.checkoutUrl) {
+    status.textContent = "The payment link is not connected yet.";
+    return;
+  }
+  ext.tabs.create({ url: licenseApi.checkoutUrl });
+});
+
+document.querySelector("#redeem").addEventListener("click", async () => {
+  const key = codeInput.value.trim();
+  if (!(await licenseApi.verify(key))) {
+    status.textContent = "That code doesn't work.";
+    return;
+  }
+  await ext.storage.local.set({ license: { key, at: Date.now() } });
+  licensed = true;
+  pay.hidden = true;
+  codeInput.value = "";
+  status.textContent = "Unlocked on this browser.";
+});
+
 document.querySelectorAll("[data-level]").forEach((button) => {
   button.addEventListener("click", () => {
-    markLevel(button.dataset.level);
+    const next = button.dataset.level;
+    if (paid(next) && !licensed) {
+      showPay("That one is part of the $4.99 unlock.");
+      return;
+    }
+    markLevel(next);
     simplifyPage();
   });
 });
@@ -103,10 +143,13 @@ window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () 
   if (theme === "system") applyTheme();
 });
 
-ext.storage.local.get(["level", "theme", "dracula"]).then((saved) => {
+ext.storage.local.get(["level", "theme", "dracula", "license"]).then(async (saved) => {
   if (saved.level === "plain" || saved.level === "context" || saved.level === "points") {
     level = saved.level;
   }
+  licensed = Boolean(await licenseApi.verify(saved.license?.key));
+  if (!licensed && paid(level)) level = "plain";
+  pay.hidden = licensed;
   if (saved.dracula) revealDracula();
   if (
     saved.theme === "system" ||
